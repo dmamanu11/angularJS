@@ -1,0 +1,27 @@
+function PrintObject(obj){
+ 	for (let n in obj)
+    if(typeof(obj[n])== 'object')
+      PrintObject(obj[n]);
+  	else
+    	console.log(n+":"+obj[n]);
+}
+
+
+var daniel = new Object();
+daniel.name = "daniel";
+daniel.last = "maman";
+daniel.address = {city : 'yavne' , street : 'shabazi'};
+daniel.family = [{name : 'A' , age : 10} , {name : 'B' , age : 20}];
+;
+
+daniel.getName = function(){
+  return this.name
+}
+console.log(daniel.getName())
+
+daniel.mobilePhone = function(model,number,){
+  this.phone = {"model":model , "number":number}
+ }
+daniel.mobilePhone("sams" , 052525)
+PrintObject(daniel)
+
