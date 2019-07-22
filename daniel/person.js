@@ -1,0 +1,32 @@
+function person(details)
+{
+this.name = details['name'] 
+this.age = details['age'] 
+this.password = details['password'] 
+this.gender = details['gen']
+this.car = details['car'] 
+this.bike = details['bike'] 
+
+}
+// class PersonClass{
+//     constructor(personDetails)
+//     this
+// }
+function clickPerson(){
+    let gen 
+    if(document.getElementById('maleRadioTxt').checked)
+        gen = 'male'
+        else
+        gen = 'female'
+    const details = {
+        name: document.getElementById('nameTxt').value,
+        age: document.getElementById('ageTxt').value,
+        password: document.getElementById('passwordTxt').value,
+        gender: gen,
+        car: document.getElementById('car').options[document.getElementById('car').selectedIndex].value,
+        bike: document.getElementById('bike').checked
+    }
+    console.log(details)
+    var pers = new person(details)
+    console.log(pers)
+}

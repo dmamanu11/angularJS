@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html ng-app="myFirstApp">
+<head>
+    <title>Hello Angular!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="counterctrl.js"></script>
+    <script src="namectrl.js"></script>
+    <script src="formctrl.js"></script>
+</head>
+
+
+<!-- <body ng-init="name = 'Daniel'"> -->
+<!--    
+    <p>NAME =  <span ng-bind="name"/> </p>
+    <p>NAME  = {{name}}</p>
+    <p ng-if="name == 'Daniel'">Hello {{name}} !</p>
+     -->
+
+
+    <div ng-controller="counterCtrl">
+            <h1>Clock</h1>
+            <h1>{{time}}</h1>
+            <button ng-click="refreshTime()">Click to refresh time</button>
+    </div>
+    <br>
+
+
+    <div ng-controller="nameCtrl">
+            <h1>name</h1>
+            <h1>{{name}}</h1>
+            <button ng-click="reverseName()">Click to reverse name</button>
+    </div>
+<br>
+<br>
+
+
+
+
+    <input type="text" ng-model="person.name" placeholder="Enter your name"/>
+            <h1>Name = {{person.name}}</h1>
+    <input type="text" ng-model="person.age" placeholder="Enter your age"/>
+            <h1>Age = {{person.age}}</h1>
+    <input type="password" ng-model="person.password" placeholder="Enter your PassWord"/>
+            <h1>Password = {{person.password}}</h1>
+    <input type="radio" ng-model='person.gender' value="male"> Male<br>
+    <input type="radio" ng-model='person.gender' value="female"> Female<br>
+        <br><br>
+
+        <select>
+                <option value="volvo">Volvo</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+              </select>
+              <br>
+        
+        <br>
+        <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+        <br>
+
+
+            <br>
+            <pr>Person = {{person | json}}</pr>
+
+</body>
+</html>
+
