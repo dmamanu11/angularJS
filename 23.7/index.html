@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html ng-app="mySecApp">
+
+<head>
+        <title>CALCULATOR!</title>
+        <script src="angular.js"></script>
+        <script src="bootstrap.js"></script>
+        <script src="calc.js"></script>
+        <script src="name.js"></script>
+
+</head>
+
+<div ng-controller="calcCtrl">
+        <h1>enter numbers:</h1>
+        <input type="number" ng-model="num1" placeholder="Enter num" />
+        
+        <select ng-model="math">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+         </select>
+   
+        <input type="number"  ng-model="num2"placeholder="Enter num" />
+        <br>
+
+<button ng-click="Calcul()">Calc!</button>
+<br>
+      <p> {{num1}}{{math}}{{num2}} = {{res}}   </p>
+      
+      <!-- ng-show="math != '  '">  {{num1}}{{math}}{{num2}} = {{res}} -->
+        <br>
+        <br>
+        <br>
+
+</div>
+
+<div ng-controller="nameCtrl">
+    <h1>enter name:</h1>
+    <input type="text" ng-model="myName" placeholder="Enter your name" />
+
+</div>
+</body>
+
+</html>
