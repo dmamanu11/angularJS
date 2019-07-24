@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+
+    <script src="globalconst.service.js"></script>
+    <script src="data.service.js"></script>
+    <script src="api.service.js"></script>
+    <script src="service.service.js"></script>
+
+
+    <script src="input.ctrl.js"></script>
+    <script src="b.ctrl.js"></script>
+    <script src="a.ctrl.js"></script>
+    <script src="sum.ctrl.js"></script>
+    <script src="div.ctrl.js"></script>
+    <script src="parent.ctrl.js"></script>
+    <script src="footer.ctrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div ng-controller="inputCtrl">
+        <p>A =
+            <input type="number" ng-model='value.a'>
+        </p>
+        <p>B =
+            <input type="number" ng-model='value.b'>
+        </p>
+
+        <p>Green,Yellow =
+            <input name='var' type="radio" ng-click="color('GY')">
+        </p>
+        <p>Blue,Brown =
+            <input name='var' type="radio" ng-click="color('BB')">
+        </p>
+
+    </div>
+
+    <div ng-controller="sumCtrl">
+        <p ng-class="{BBmin : value.choosenColor == 'BB' && !isPose(),
+                      BB : value.choosenColor == 'BB' && isPose(),
+                      GY : value.choosenColor == 'GY' && isPose(),
+                      GYmin : value.choosenColor == 'GY' && !isPose()}">
+            {{value.a}} + {{value.b}} = {{value.a+value.b}} </p>
+
+
+    </div>
+
+    <div ng-controller="bCtrl">
+        <button ng-click="fullAtrig()"> ref </button>
+        <p ng-repeat="m in fullB"> 
+            {{m}}    
+        </p>
+
+
+    </div>
+
+    <!-- <p>Product version = {{productVersion}}</p>
+            <p ng-repeat="n in items">{{n}}</p>
+            <button ng-click="items.push(items.length+1)">Add Item</button>
+            <button ng-click="calcPower()">Calc power of 3</button> -->
+
+
+    <br>
+</body>
+
+</html>
